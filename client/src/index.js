@@ -7,7 +7,6 @@ import './index.css';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <p>a</p>
   </React.StrictMode>,
   document.getElementById('root')
 );
