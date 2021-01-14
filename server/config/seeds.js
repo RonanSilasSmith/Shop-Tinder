@@ -123,6 +123,15 @@ db.once('open', async () => {
       image: 'pinghole_sunglasess.jpg',
       price: 99.99,
       quantity: 45
+    },
+    {
+      name: 'Sunglasses 3',
+      category: categories[4]._id,
+      description:
+        'Pinhole Sunglasses',
+      image: '',
+      price: 99.99,
+      quantity: 45
     }
   ]);
 
