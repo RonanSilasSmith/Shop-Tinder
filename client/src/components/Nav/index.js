@@ -1,15 +1,15 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Nav() {
     function showNav(){
         return(
             <ul className="d-flex flex-row">
-                <li className="p-2"><a href="/">StorePage</a></li>
-                <li className="p-2"><a href="/">Cart</a></li>
-                <li className="p-2"><a href="/">Login</a></li>
-                <li className="p-2"><a href="/">Sign Up</a></li>
+                <li className="p-2"><Link to="/">StorePage</Link></li>
+                <li className="p-2"><Link to="/cart">Cart</Link></li>
+                <li className="p-2"><Link to="signup">Signup</Link></li>
+                <li className="p-2"><Link to="/login">Login</Link></li>
             </ul>
         )
     }
