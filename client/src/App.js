@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Nav from "./components/Nav";
-import Cart from "./components/Cart";
-import ProductSelect from "./components/ProductSelect";
+import Cart from "./pages/Cart";
+import Home from "./pages/Home"
+import Login from "./pages/Login"
+import Signup from "./pages/Signup"
 
 function App() {
   return (
@@ -13,12 +15,13 @@ function App() {
         <div>
           <Nav />
           <Switch>
-            <Route exact path = "/" component ={ProductSelect}></Route>
+            <Route exact path = "/" component ={Home}></Route>
             <Route exact path= "/cart" component={Cart}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/Signup" component={Signup}></Route>
           </Switch>
         </div>
       </Router>
-      {/* <Cart /> */}
     </div>
   );
 }
