@@ -13,6 +13,20 @@ function Cart() {
                 <CartItems />
                 <div className="card-body">
                     <h3>Place Order:<button type="button" class="btn btn-primary">PayPal API stuff here</button></h3>
+                    
+                    <div>  
+                    {checkout ? (
+                        <PayPal />
+                    ) : (
+                        <button 
+                            onClick={() => {
+                                setCheckout(true);
+                    }}
+                    >
+                    Checkout
+                    </button>
+                    )}
+                    </div>
                 </div>
             </div>
         </main>

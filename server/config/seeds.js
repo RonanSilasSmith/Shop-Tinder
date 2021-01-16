@@ -123,7 +123,7 @@ db.once('open', async () => {
       image: 'pinghole_sunglasess.jpg',
       price: 99.99,
       quantity: 45
-    }
+    },
   ]);
 
   console.log('products seeded');
