@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import CartItems from "../components/CartItems";
+import PayPal from "../components/PayPal";
 
 
 function Cart() {
+
+    const [checkout, setCheckOut] = useState(false)
 
     return (
         <main>
@@ -12,21 +15,20 @@ function Cart() {
                 </div>
                 <CartItems />
                 <div className="card-body">
-                    <h3>Place Order:<button type="button" class="btn btn-primary">PayPal API stuff here</button></h3>
-                    
-                    <div>  
-                    {checkout ? (
+                    <h3>Place Order:   <div>  
+                    {/* {checkout ? (
                         <PayPal />
                     ) : (
                         <button 
                             onClick={() => {
-                                setCheckout(true);
+                                setCheckOut(true);
                     }}
                     >
                     Checkout
                     </button>
-                    )}
-                    </div>
+                    )} */}
+                    <PayPal />
+                    </div></h3>
                 </div>
             </div>
         </main>
@@ -35,3 +37,5 @@ function Cart() {
 
 
 export default Cart
+
+//<button type="button" class="btn btn-primary">PayPal API stuff here</button
