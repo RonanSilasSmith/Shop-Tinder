@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Paypal() {
+export default function PayPal() {
 
     const paypal = useRef();
 
