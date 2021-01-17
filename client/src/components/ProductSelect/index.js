@@ -7,7 +7,7 @@ function ProductSelect() {
 
     return (
         <main>
-            <div className="card" style={{ width: "50%", marginLeft: "25%", marginRight: "25%" }}>
+            <div className="card centerplace">
                 <img class="card-img-top" src="https://dummyimage.com/640x360/fff/aaa" alt="Placeholder for products"></img>
                 <div class="card-body">
                     <h5 class="card-title">Item Title</h5>
