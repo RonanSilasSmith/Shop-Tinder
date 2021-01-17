@@ -14,7 +14,7 @@ function Cart() {
                 <div className="card-body">
                     <h3>Place Order:<button type="button" class="btn btn-primary">PayPal API stuff here</button></h3>
                     
-                    <div>  
+                    {/* <div>  
                     {checkout ? (
                         <PayPal />
                     ) : (
@@ -26,7 +26,7 @@ function Cart() {
                     Checkout
                     </button>
                     )}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </main>
