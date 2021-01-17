@@ -12,7 +12,6 @@ import Signup from "./pages/Signup"
 
 function App() {
 
-// const [checkout, setCheckOut] = useState(false)
   return (
     <div className="App">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"></link>
@@ -26,17 +25,6 @@ function App() {
             <Route exact path="/Signup" component={Signup}></Route>
           </Switch>
 
-          {/* {checkout ? (
-            <Paypal />
-          ) : (
-          <button 
-            onClick={() => {
-              setCheckOut(true);
-          }}
-          >
-            Checkout
-          </button>
-          )} */}
         </div>
       </Router>
     </div>

@@ -1,26 +1,26 @@
 import React, { useEffect, useRef } from "react";
 
-export default function PayPal() {
+export default function Paypal() {
 
     const paypal = useRef();
 
     useEffect(() => {
         window.paypal
         .Buttons({
-            createOrder: (data, actions, err) => {
-                return actions.order.create({
-                   intent: "CAPTURE",
-                   purchase_units: [
-                       {
-                           description: "Clothing",
-                           amount: {
-                               currency_code: "USD",
-                               value: 500.0,
-                           },
-                       },
-                   ],
-                });
-            },
+            // createOrder: (data, actions, err) => {
+            //     return actions.order.create({
+            //        intent: "CAPTURE",
+            //        purchase_units: [
+            //            {
+            //                description: "Clothing",
+            //                amount: {
+            //                    currency_code: "USD",
+            //                    value: 500.0,
+            //                },
+            //            },
+            //        ],
+            //     });
+            // },
             onApprove: async (data, actions) => {
                 const order = await actions.order.capture();
                 console.log(order);
