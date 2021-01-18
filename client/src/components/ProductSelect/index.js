@@ -1,5 +1,5 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 function ProductSelect() {
@@ -12,11 +12,11 @@ function ProductSelect() {
                 <div class="card-body">
                     <h5 class="card-title">Item Title</h5>
                     <h6 class="card-subtitle text-muted">$Price</h6>
-                    <p class="card-text">Describe the item with however man words.</p>
+                    <p class="card-text">Describe the item with however many words.</p>
                     <div className="d-flex justify-content-between">
-                        <a href="/" class="btn btn-primary">Not interested..</a>
-                        <a href="/" class="btn btn-danger">I need this NOW</a>
-                        <a href="/" class="btn btn-primary">Add to cart :)</a>
+                        <a href="/" class="btn btn-primary" onClick={() =>{}}>Not interested...</a>
+                        <a href="/" class="btn btn-danger" onClick={() => {<Redirect from="/" to="/cart/" />}}>I need this NOW</a>
+                        <a href="/" class="btn btn-primary" onClick={() => {<Redirect from="/" to="/cart/" />}}>Add to cart :)</a>
                     </div>
                 </div>
             </div>
