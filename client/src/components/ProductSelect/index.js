@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-function ProductSelect(props) {
+function ProductSelect() {
     const stock = [
         {
             id: 1,
@@ -25,17 +25,35 @@ function ProductSelect(props) {
     ];
 
 
-    function List(props) {
-        return (
-            <ul className="list-group">
-              {props.stock.map(item => (
-                <li className="list-group-item" key={item.id}>
-                  {item.name}, {item.title}, {item.price}, {item.description}
-                </li>
-              ))}
-            </ul>
-        );
+    const [regItems, setItems] = useState([]);
+    const [currentItems, setCurrentItems] = useState(
+        {
+            id: 1,
+            title: 'First Item',
+            price: '$5.00',
+            description: 'test one'
+        }
+    );
+
+    useEffect(async () => {stock})
+
+
+    function addItem(shopItem) {
+        setItems();
+        setCurrentItems(current => [...current, shopItem.title, shopItem.price, shopItem.description]);
     }
+
+    // function List(props) {
+    //     return (
+    //         <ul className="list-group">
+    //           {props.stock.map(item => (
+    //             <li className="list-group-item" key={item.id}>
+    //               {item.name}, {item.title}, {item.price}, {item.description}
+    //             </li>
+    //           ))}
+    //         </ul>
+    //     );
+    // }
 
 
     return (
@@ -47,9 +65,9 @@ function ProductSelect(props) {
                     <h6 class="card-subtitle text-muted">$Price</h6>
                     <p class="card-text">Describe the item with however many words.</p>
                     <div className="d-flex justify-content-between">
-                        <a href="/" class="btn btn-primary" onClick={() =>}>Not interested...</a>
+                        <a href="/" class="btn btn-primary">Not interested...</a>
                         <a href="/" class="btn btn-danger"><Link to="/cart">I need this NOW</Link></a>
-                        <a href="/" class="btn btn-primary"><Link to="/cart">Add to cart :)</Link></a>
+                        <a href="/" class="btn btn-primary"><Link to="/cart" onClick={()=>addItem(shopItem)}>Add to cart :)</Link></a>
                     </div>
                 </div>
             </div>
