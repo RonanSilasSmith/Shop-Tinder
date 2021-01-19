@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-function ProductSelect() {
+function ProductSelect(props) {
+    const stock = [
+        {
+            id: 1,
+            title: 'First Item',
+            price: '$5.00',
+            description: 'test one'
+        },
+        {
+            id: 2,
+            title: 'Second Item',
+            price: '$10.00',
+            description: 'test two'
+        },
+        {
+            id: 3,
+            title: 'Third Item',
+            price: '$15.00',
+            description: 'test three'
+        }
+    ];
+
+
+    function List(props) {
+        return (
+            <ul className="list-group">
+              {props.stock.map(item => (
+                <li className="list-group-item" key={item.id}>
+                  {item.name}, {item.title}, {item.price}, {item.description}
+                </li>
+              ))}
+            </ul>
+        );
+    }
 
 
     return (
@@ -14,7 +47,7 @@ function ProductSelect() {
                     <h6 class="card-subtitle text-muted">$Price</h6>
                     <p class="card-text">Describe the item with however many words.</p>
                     <div className="d-flex justify-content-between">
-                        <a href="/" class="btn btn-primary" onClick={() =>{}}>Not interested...</a>
+                        <a href="/" class="btn btn-primary" onClick={() =>}>Not interested...</a>
                         <a href="/" class="btn btn-danger"><Link to="/cart">I need this NOW</Link></a>
                         <a href="/" class="btn btn-primary"><Link to="/cart">Add to cart :)</Link></a>
                     </div>
