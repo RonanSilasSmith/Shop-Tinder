@@ -12,7 +12,7 @@ function Cart() {
                 </div>
                 <CartItems />
                 <div className="card-body">
-                    <h3>Place Order:<button type="button" class="btn btn-primary">PayPal API stuff here</button></h3>
+                    <h3>Place Order:<button type="button" className="btn btn-primary">PayPal API stuff here</button></h3>
                 </div>
             </div>
         </main>
