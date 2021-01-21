@@ -4,21 +4,24 @@ import { Link } from "react-router-dom";
 const stock = [
     {
         id: 1,
-        title: 'First Item',
+        title: 'Green Hat',
         price: '$5.00',
-        description: 'test one'
+        description: 'Hat that is green',
+        image: 'https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/691730'
     },
     {
         id: 2,
-        title: 'Second Item',
+        title: 'Black hat',
         price: '$10.00',
-        description: 'test two'
+        description: 'Hat that is black',
+        image: 'https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/30850'
     },
     {
         id: 3,
-        title: 'Third Item',
+        title: 'propeller hat',
         price: '$15.00',
-        description: 'test three'
+        description: 'Hat that is rainbow',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/81StjJ9-goL._AC_UL1500_.jpg'
     }
 ];
 
@@ -78,8 +81,8 @@ function ProductSelect() {
 
     return (
         <main>
-            <div className="card" style={{ width: "50%", marginLeft: "25%", marginRight: "25%" }}>
-                <img className="card-img-top" src="https://dummyimage.com/640x360/fff/aaa" alt="Placeholder for products"></img>
+            <div className="card centerplace">
+                <img className="card-img-top" src={currentItem.image} alt="Placeholder for products"></img>
                 <div className="card-body">
                     <h5 className="card-title">{currentItem.title}</h5>
                     <h6 className="card-subtitle text-muted">{currentItem.price}</h6>
