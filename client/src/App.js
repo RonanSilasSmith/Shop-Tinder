@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //import React, {useState } from "react";
 
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
 
 import Nav from "./components/Nav";
 import Paypal from "./components/PayPal";
@@ -10,9 +12,19 @@ import Home from "./pages/Home"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 
+
+
+
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql'
+});
+
+
+
 function App() {
 
   return (
+    <ApolloProvider client={client}>
     <div className="App">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"></link>
       <Router>
@@ -28,6 +40,7 @@ function App() {
         </div>
       </Router>
     </div>
+    </ApolloProvider>
   );
 }
 
