@@ -1,21 +1,82 @@
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/Auth';
+
 const Signup = () => {
+    const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+
+    const [addUser, { error }] = useMutation(ADD_USER);
+
+    // update state based on form input changes
+    const handleChange = event => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value
+        });
+    };
+
+    // submit form(async)
+    const handleFormSubmit = async event => {
+        event.preventDefault();
+
+        // use try/catch instead of promises to handle errors
+        try {
+            const { data } = await addUser({
+                variables: { ...formState }
+            });
+
+            Auth.login(data.addUser.token);
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
     return (
-        <form style={{ width: "50%", marginLeft: "25%" }}>
-            <h2>Signup</h2>
-            <div class="form-group">
-                <label for="UsernameInput">Username</label>
-                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="Enter email" />
+        <main className="flex-row justify-center mb-4">
+            <div className="col-12 col-md-6">
+                <div className="card">
+                    <h4 className="card-header">Sign Up</h4>
+                    <div className="card-body">
+                        <form onSubmit={handleFormSubmit}>
+                            <input
+                                className="form-input"
+                                placeholder="Your username"
+                                name="username"
+                                type="username"
+                                id="username"
+                                value={formState.username}
+                                onChange={handleChange}
+                            />
+                            <input
+                                className="form-input"
+                                placeholder="Your email"
+                                name="email"
+                                type="email"
+                                id="email"
+                                value={formState.email}
+                                onChange={handleChange}
+                            />
+                            <input
+                                className="form-input"
+                                placeholder="******"
+                                name="password"
+                                type="password"
+                                id="password"
+                                value={formState.password}
+                                onChange={handleChange}
+                            />
+                            <button className="btn d-block w-100" type="submit">
+                                Submit
+              </button>
+                        </form>
+                        {error && <div>Sign up failed</div>}
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="EmailInput">Email address</label>
-                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="Enter email" />
-            </div>
-            <div class="form-group">
-                <label for="PasswordInput">Password</label>
-                <input type="password" class="form-control" id="PasswordInput" placeholder="Password" />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </main>
     );
 };
 
