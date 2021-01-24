@@ -153,3 +153,6 @@ db.once('open', async () => {
 
   process.exit();
 });
+
+
+module.exports = { categories, products };
