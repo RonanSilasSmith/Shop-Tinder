@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import CartItems from "../components/CartItems";
 import PayPal from "../components/PayPal";
-
+import Auth from '../utils/Auth';
 
 function Cart() {
 
@@ -9,14 +9,15 @@ function Cart() {
 
     return (
         <main>
-            <div className="card centerplace">
-                <div className="card-body">
-                    <h2 className="card-title">Your Cart:</h2>
-                </div>
-                <CartItems />
-                <div className="card-body">
-                    <h3>Place Order:   <div>  
-                    {/* {checkout ? (
+            {Auth.loggedIn()?(
+                <div className="card centerplace">
+                    <div className="card-body">
+                        <h2 className="card-title">Your Cart:</h2>
+                    </div>
+                    <CartItems />
+                    <div className="card-body">
+                        <h3>Place Order:   <div>
+                            {/* {checkout ? (
                         <PayPal />
                     ) : (
                         <button 
@@ -27,10 +28,14 @@ function Cart() {
                     Checkout
                     </button>
                     )} */}
-                    <PayPal />
-                    </div></h3>
+                            <PayPal />
+                        </div></h3>
+                    </div>
                 </div>
-            </div>
+            ):(
+                <p>Log in to see cart!! </p>
+            )}
+            
         </main>
     )
 }
