@@ -1,5 +1,5 @@
 # Shop Tinder
-<img width="387" alt="Screen Shot 2021-01-24 at 9 07 02 PM" src="https://user-images.githubusercontent.com/67357469/105664012-7bc4f280-5e88-11eb-8bb0-f820d3bcd845.png">
+<img width="756" alt="proj-7" src="https://user-images.githubusercontent.com/67357469/105676450-63140700-5e9f-11eb-9871-05ab6adf1412.png">
 <img width="443" alt="Screen Shot 2021-01-24 at 9 07 29 PM" src="https://user-images.githubusercontent.com/67357469/105664016-7e274c80-5e88-11eb-8a7a-be6a8c961490.png">
 <img width="262" alt="Screen Shot 2021-01-24 at 9 08 11 PM" src="https://user-images.githubusercontent.com/67357469/105664022-8089a680-5e88-11eb-9c9e-72d18e70b31c.png">
 
