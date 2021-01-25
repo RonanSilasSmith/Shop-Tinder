@@ -28,9 +28,9 @@ After you swipe right, that item should be in your cart, and you can purchase it
 Feel free to contribute and fork the repo at your pleasure, as the above license suggests, we have no problem with people using our code as a jumping off point for further development.
 
 ## Contributers
-Ronan Smith: https://github.com/RonanSilasSmith
-Amokeye Ogar: https://github.com/amokeye
-Ali Nguyen:  https://github.com/nguyenali
+* Ronan Smith: https://github.com/RonanSilasSmith
+* Amokeye Ogar: https://github.com/amokeye
+* Ali Nguyen:  https://github.com/nguyenali
 
 ## Contact
 Ronan Smith: smith.ronan@outlook.com
