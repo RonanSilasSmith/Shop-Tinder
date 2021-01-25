@@ -38,7 +38,7 @@ function ProductSelect() {
         })
     }
     console.log(error)
-
+    console.log(currentItem)
     const product = data?.products || error
 
     // console.log(product[currentItem]._id)
