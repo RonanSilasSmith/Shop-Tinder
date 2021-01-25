@@ -39,12 +39,11 @@ function ProductSelect() {
     }
     console.log(error)
     console.log(currentItem)
-    const product = error
+    const product = data?.products || error
 
     // console.log(product[currentItem]._id)
     return (
         <main>
-            this is an error build that strips database connections for the sake of making it deploy
             <div className="card centerplace">
                 <Link to={`/products/${product[currentItem]._id}`}>
                 </Link>
