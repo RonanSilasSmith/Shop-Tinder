@@ -1,11 +1,36 @@
 import React, { useEffect } from 'react';
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_PRODUCTS } from '../../utils/queries'
 //import { Link } from "react-router-dom";
 
 
 function ProductSelect() {
+    const [state, dispatch] = useStoreContext();
 
+    const { currentCategory } = state;
+
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
+    console.log(data)
+
+
+    useEffect(() => {
+        if (data) {
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                products: data.products
+            });
+        }
+    }, [data, dispatch]);
+
+    function filterProducts() {
+        if (!currentCategory) {
+            return state.products;
+        }
+
+        return state.products.filter(product => product.category._id === currentCategory);
+    }
 
     return (
         <main>
