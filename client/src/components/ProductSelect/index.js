@@ -1,6 +1,4 @@
-import React, { useEffect, useState} from 'react';
-import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../../utils/actions';
+import React, { useState} from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_PRODUCTS } from '../../utils/queries'
 import { Link } from "react-router-dom";
@@ -9,13 +7,12 @@ import { Link } from "react-router-dom";
 function ProductSelect() {
     const [currentItem, setCurrentItem] = useState(0);
 
-    const [state, dispatch] = useStoreContext();
+
 
     const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-    console.log(currentItem)
     const product = data?.products || []
-    console.log(product)
+
 
     const addItem = () => {
         moveToNextItem();
@@ -27,7 +24,6 @@ function ProductSelect() {
         if (currentItem >= product.length-2){
             setCurrentItem(0)
         }
-        console.log(currentItem)
     }
 
 
@@ -36,7 +32,7 @@ function ProductSelect() {
             <div className="card centerplace">
                 <Link to={`/products/${product[currentItem]._id}`}>
                 </Link>
-                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt="Placeholder for products"></img>
+                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt={product[currentItem].name}></img>
                 <div class="card-body">
                     <h5 class="card-title">{product[currentItem].name}</h5>
                     <h6 class="card-subtitle text-muted">${product[currentItem].price}</h6>
