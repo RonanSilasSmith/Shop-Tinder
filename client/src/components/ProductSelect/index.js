@@ -1,17 +1,17 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_PRODUCTS } from '../../utils/queries'
 import { Link } from "react-router-dom";
 
 
 function ProductSelect() {
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
     const [currentItem, setCurrentItem] = useState(0);
 
 
 
-    const { loading, data } = useQuery(QUERY_PRODUCTS);
+    
 
-    const product = data?.products || []
 
 
     const addItem = () => {
@@ -26,13 +26,28 @@ function ProductSelect() {
         }
     }
 
+    let error = []
+    for(let i=0; i<12; i++){
+        error.push({
+            name: 'Error',
+            description:
+                'This is only here because error',
+            image: 'errorIMG.jpg',
+            price: 99.99,
+            quantity: 45
+        })
+    }
+    console.log(error)
 
+    const product = data?.products || error
+
+    // console.log(product[currentItem]._id)
     return (
         <main>
             <div className="card centerplace">
                 <Link to={`/products/${product[currentItem]._id}`}>
                 </Link>
-                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt={product[currentItem].name}></img>
+                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt={product[currentItem].name}></img> 
                 <div class="card-body">
                     <h5 class="card-title">{product[currentItem].name}</h5>
                     <h6 class="card-subtitle text-muted">${product[currentItem].price}</h6>
