@@ -6,7 +6,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 
 import Nav from "./components/Nav";
-import Paypal from "./components/PayPal";
+// import Paypal from "./components/PayPal";
 import Cart from "./pages/Cart";
 import Home from "./pages/Home"
 import Login from "./pages/Login"
