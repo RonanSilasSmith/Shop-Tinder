@@ -34,9 +34,13 @@ function ProductSelect() {
     return (
         <main>
             <div className="card centerplace">
-                <Link to={`/products/${product[currentItem]._id}`}>
-                </Link>
-                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt="Placeholder for products"></img>
+                {/* <Link to={`/products/${product[currentItem]._id}`}>
+                    <img
+                        alt={product[currentItem].name}
+                        src={`/images/${product[currentItem].image}`}
+                    />
+                </Link> */}
+                <img class="card-img-top" src="https://dummyimage.com/640x360/fff/aaa" alt="Placeholder for products"></img>
                 <div class="card-body">
                     <h5 class="card-title">{product[currentItem].name}</h5>
                     <h6 class="card-subtitle text-muted">${product[currentItem].price}</h6>
