@@ -33,9 +33,9 @@ Feel free to contribute and fork the repo at your pleasure, as the above license
 * Ali Nguyen:  https://github.com/nguyenali
 
 ## Contact
-Ronan Smith: smith.ronan@outlook.com
-Amokeye Ogar: Amokeye91@gmail.com
-Ali Nguyen: huy31996@hotmail.com
+* Ronan Smith: smith.ronan@outlook.com
+* Amokeye Ogar: Amokeye91@gmail.com
+* Ali Nguyen: huy31996@hotmail.com
 
 ## Technology
 
