@@ -36,7 +36,11 @@ function ProductSelect() {
 
 
     const moveToNextItem = () => {
-        setCurrentItem(currentItem+1)
+        console.log(product.length)
+        setCurrentItem(currentItem + 1)
+        if (currentItem >= product.length-2){
+            setCurrentItem(0)
+        }
         console.log(currentItem)
     }
 
@@ -46,12 +50,12 @@ function ProductSelect() {
         <main>
             
             <div className="card centerplace">
-                <Link to={`/products/${product[currentItem]._id}`}>
+                {/* <Link to={`/products/${product[currentItem]._id}`}>
                     <img
                         alt={product[currentItem].name}
                         src={`/images/${product[currentItem].image}`}
                     />
-                </Link>
+                </Link> */}
                 <img class="card-img-top" src="https://dummyimage.com/640x360/fff/aaa" alt="Placeholder for products"></img>
                 <div class="card-body">
                     <h5 class="card-title">{product[currentItem].name}</h5>
