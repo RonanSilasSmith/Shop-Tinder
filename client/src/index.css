@@ -31,3 +31,26 @@ li {
   border: solid 1px rgb(36, 36, 36); 
   margin: 10px 10px 0px;
 }
+
+
+.centerplace{
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+@media (max-width: 1000px) {
+.centerplace{
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+}
+
+@media (max-width: 800px) {
+.centerplace{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+}

@@ -1,7 +1,7 @@
 {
   "name": "mern-shopping",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project was designed to bring a new way of interfacing with a familiar E-Commerce framework.",
   "main": "server/server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -14,9 +14,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "jwt-decode": "^3.1.2"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
-  }
+    "concurrently": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonanSilasSmith/Shop-Tinder.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/RonanSilasSmith/Shop-Tinder/issues"
+  },
+  "homepage": "https://github.com/RonanSilasSmith/Shop-Tinder#readme"
 }

@@ -1,22 +1,61 @@
-import React from "react";
-//import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useQuery } from '@apollo/react-hooks';
+import { QUERY_PRODUCTS } from '../../utils/queries'
+import { Link } from "react-router-dom";
 
 
 function ProductSelect() {
+    const { loading, data } = useQuery(QUERY_PRODUCTS);
+    const [currentItem, setCurrentItem] = useState(0);
 
 
+
+    
+
+
+
+    const addItem = () => {
+        moveToNextItem();
+    }
+
+    const moveToNextItem = () => {
+        console.log(product.length)
+        setCurrentItem(currentItem + 1)
+        if (currentItem >= product.length-2){
+            setCurrentItem(0)
+        }
+    }
+
+    let error = []
+    for(let i=0; i<12; i++){
+        error.push({
+            name: 'Error',
+            description:
+                'This is only here because error',
+            image: 'errorIMG.jpg',
+            price: 99.99,
+            quantity: 45
+        })
+    }
+    console.log(error)
+    console.log(currentItem)
+    const product = data?.products || error
+
+    // console.log(product[currentItem]._id)
     return (
         <main>
-            <div className="card" style={{ width: "50%", marginLeft: "25%", marginRight: "25%" }}>
-                <img class="card-img-top" src="https://dummyimage.com/640x360/fff/aaa" alt="Placeholder for products"></img>
+            <div className="card centerplace">
+                <Link to={`/products/${product[currentItem]._id}`}>
+                </Link>
+                <img class="card-img-top" src={`/images/${product[currentItem].image}`} alt={product[currentItem].name}></img> 
                 <div class="card-body">
-                    <h5 class="card-title">Item Title</h5>
-                    <h6 class="card-subtitle text-muted">$Price</h6>
-                    <p class="card-text">Describe the item with however man words.</p>
+                    <h5 class="card-title">{product[currentItem].name}</h5>
+                    <h6 class="card-subtitle text-muted">${product[currentItem].price}</h6>
+                    <p class="card-text">{product[currentItem].description}</p>
                     <div className="d-flex justify-content-between">
-                        <a href="/" class="btn btn-primary">Not interested..</a>
-                        <a href="/" class="btn btn-danger">I need this NOW</a>
-                        <a href="/" class="btn btn-primary">Add to cart :)</a>
+                        <button class="btn btn-primary" onClick={moveToNextItem}>Not interested..</button>
+                        <button class="btn btn-danger">I need this NOW</button>
+                        <button class="btn btn-primary" onClick={addItem}>Add to cart :)</button>
                     </div>
                 </div>
             </div>
